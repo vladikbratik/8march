@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c:*)",
+      "Bash(node -e:*)",
+      "Bash(__NEW_LINE_894d7b57be714b10__ cd \"c:/Users/L O T U S/Desktop/site/march8-landing/public\")",
+      "Bash(__NEW_LINE_894d7b57be714b10__ cp \"Тарасова.png\" \"assets/photos/tarasova.png\")",
+      "Bash(__NEW_LINE_894d7b57be714b10__ ls assets/photos/)"
+    ]
+  }
+}

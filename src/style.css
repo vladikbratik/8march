@@ -1,0 +1,750 @@
+/* ===========================
+   CSS VARIABLES & RESET
+   =========================== */
+
+:root {
+  --bg:     #f5f0e4;   /* старая бумага */
+  --text:   #2a1f0e;   /* тёмно-коричневый */
+  --accent: #8b4513;   /* терракотовый */
+  --mid:    #d6cbaf;   /* средний тёплый, для фото-плейсхолдеров */
+  --dark:   #1a1208;   /* финальная темнота */
+
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans:  'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Зернистость плёнки — советская бумага, opacity 0.08 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  mix-blend-mode: multiply;
+}
+
+/* ===========================
+   АУДИО КНОПКА
+   =========================== */
+
+.audio-btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1001;
+  background: transparent;
+  border: 1px solid rgba(139, 69, 19, 0.35);
+  color: var(--accent);
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 0; /* квадратная — советский стиль */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  padding: 0;
+  line-height: 1;
+}
+
+.audio-btn:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+/* ===========================
+   SECTION 1: HERO
+   =========================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Лёгкое виньетирование бумаги — как старая афиша */
+  background:
+    radial-gradient(ellipse at center, #faf6ed 0%, var(--bg) 55%, #e8e0cc 100%);
+  text-align: center;
+  padding: 40px 24px;
+}
+
+/* --- Декоративная двойная рамка --- */
+
+.hero__frame {
+  position: absolute;
+  inset: 20px;
+  pointer-events: none;
+  /* Внешняя линия */
+  border: 1px solid rgba(139, 69, 19, 0.42);
+}
+
+/* Внутренняя линия — 8px от внешней */
+.hero__frame::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+/* --- Угловые орнаменты --- */
+
+.hero__corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: var(--accent);
+  display: block;
+}
+
+/* Каждый угол центрируется на точке пересечения рамки */
+.hero__corner--tl { top: -20px; left: -20px; }
+.hero__corner--tr { top: -20px; right: -20px; transform: rotate(90deg); }
+.hero__corner--bl { bottom: -20px; left: -20px;  transform: rotate(-90deg); }
+.hero__corner--br { bottom: -20px; right: -20px; transform: rotate(180deg); }
+
+/* --- Разделители с ромбами --- */
+
+.hero__sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0;
+  color: var(--accent);
+}
+
+/* Двойные линии по бокам (советский типографский стиль) */
+.hero__sep::before,
+.hero__sep::after {
+  content: '';
+  flex: 1;
+  height: 7px;
+  border-top: 1px solid rgba(139, 69, 19, 0.4);
+  border-bottom: 1px solid rgba(139, 69, 19, 0.18);
+}
+
+.hero__sep-diamond {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  opacity: 0.38;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.hero__sep-diamond--lg {
+  width: 13px;
+  height: 13px;
+  opacity: 0.58;
+}
+
+/* --- Текстовые элементы Hero --- */
+
+.hero__inner {
+  max-width: 680px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 7px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  letter-spacing: 3px;
+  margin-bottom: 0;
+}
+
+.hero__date {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 6px;
+  color: rgba(42, 31, 14, 0.45);
+  margin-bottom: 80px;
+  text-transform: uppercase;
+}
+
+.hero__scroll {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.3s;
+}
+
+.hero__scroll:hover .scroll-indicator {
+  color: rgba(42, 31, 14, 0.55);
+}
+
+.scroll-indicator {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: rgba(42, 31, 14, 0.3);
+  text-transform: lowercase;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+/* Когда автоскролл активен */
+.scroll-indicator.is-rolling {
+  color: rgba(139, 69, 19, 0.55);
+  letter-spacing: 3px;
+}
+
+/* ===========================
+   SECTION 2: ВИДЕО
+   =========================== */
+
+.video-section {
+  padding: 120px 24px;
+  background-color: var(--bg);
+}
+
+.video-section__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.video-section__label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: rgba(42, 31, 14, 0.4);
+  margin-bottom: 20px;
+  text-transform: lowercase;
+}
+
+.video-wrapper {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  border: 1px solid rgba(42, 31, 14, 0.2);
+  /* Советская рамка: внешний контур + тонкий внутренний отступ */
+  outline: 3px solid rgba(139, 69, 19, 0.12);
+  outline-offset: 5px;
+}
+
+.video-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 80px rgba(26, 18, 8, 0.5);
+  pointer-events: none;
+}
+
+.main-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: #1a1208;
+}
+
+.video-section__year {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: rgba(42, 31, 14, 0.4);
+  margin-top: 24px;
+}
+
+/* ===========================
+   SECTION 3: ТИТРЫ
+   =========================== */
+
+.credits {
+  padding: 100px 24px 140px;
+  background-color: var(--bg);
+}
+
+.credits__epigraph {
+  max-width: 560px;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+
+.epigraph__rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--accent);
+}
+
+.epigraph__rule::before,
+.epigraph__rule::after {
+  content: '';
+  flex: 1;
+  height: 7px;
+  border-top: 1px solid rgba(139, 69, 19, 0.38);
+  border-bottom: 1px solid rgba(139, 69, 19, 0.15);
+}
+
+.epigraph__diamond {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+  opacity: 0.45;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  display: block;
+}
+
+.epigraph__text {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 28px);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: rgba(42, 31, 14, 0.6);
+  margin: 28px 0;
+}
+
+.credits__chapter {
+  max-width: 640px;
+  margin: 0 auto 120px;
+}
+
+.credits__chapter:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Заголовок главы --- */
+
+.chapter__header {
+  margin-bottom: 52px;
+  text-align: center;
+}
+
+/* Двойной разделитель — советский типографский стиль */
+.chapter__divider {
+  position: relative;
+  height: 7px;
+  margin: 20px 0;
+}
+
+.chapter__divider::before,
+.chapter__divider::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(139, 69, 19, 0.45) 12%,
+    rgba(139, 69, 19, 0.45) 88%,
+    transparent
+  );
+}
+
+.chapter__divider::before { top: 0; }
+.chapter__divider::after  { bottom: 0; }
+
+.chapter__numeral {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 8px;
+  color: rgba(139, 69, 19, 0.4);
+  margin-bottom: 10px;
+}
+
+.chapter__title {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* --- Одиночная глава (VI–IX) — звёздный биллинг --- */
+
+.credits__chapter--solo {
+  max-width: 440px;
+}
+
+.credits__chapter--solo .person-card__photo {
+  width: 148px;
+  height: 148px;
+  border: 1px solid rgba(139, 69, 19, 0.28);
+  outline: 3px solid rgba(139, 69, 19, 0.09);
+  outline-offset: 5px;
+}
+
+.credits__chapter--solo .person-card__name {
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+/* --- Карточки персон --- */
+
+/* Групповые главы (I–V) — сетка 2 колонки */
+.credits__chapter:not(.credits__chapter--solo) .chapter__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 64px 32px;
+}
+
+/* Нечётный последний элемент (3 человека) — растянуть на всю строку и центрировать */
+.credits__chapter:not(.credits__chapter--solo) .chapter__cards > .person-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.chapter__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  align-items: center;
+}
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.person-card__photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: var(--mid);
+  border: 1px solid rgba(139, 69, 19, 0.22);
+  outline: 2px solid rgba(139, 69, 19, 0.08);
+  outline-offset: 4px;
+}
+
+.person-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.person-card__info {
+  padding-top: 0;
+}
+
+.person-card__name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.person-card__role {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: var(--accent);
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+.person-card__dedication {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(42, 31, 14, 0.6);
+  line-height: 1.65;
+}
+
+/* ===========================
+   ПЕРЕХОД ТИТРЫ → ФИНАЛ
+   =========================== */
+
+.section-fade {
+  height: 220px;
+  background: linear-gradient(to bottom, var(--bg), var(--dark));
+  display: block;
+}
+
+/* ===========================
+   SECTION 4: ФИНАЛЬНЫЙ КАДР
+   =========================== */
+
+.final {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark);
+  overflow: hidden;
+}
+
+/* --- Декоративная рамка финала (как в Hero, но светлая) --- */
+
+.final__frame {
+  position: absolute;
+  inset: 20px;
+  pointer-events: none;
+  border: 1px solid rgba(245, 240, 228, 0.16);
+  color: rgba(245, 240, 228, 0.28);
+  z-index: 2;
+}
+
+.final__frame::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(245, 240, 228, 0.07);
+}
+
+.final__corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: inherit;
+  display: block;
+}
+
+.final__corner--tl { top: -20px; left: -20px; }
+.final__corner--tr { top: -20px; right: -20px; transform: rotate(90deg); }
+.final__corner--bl { bottom: -20px; left: -20px;  transform: rotate(-90deg); }
+.final__corner--br { bottom: -20px; right: -20px; transform: rotate(180deg); }
+
+.final__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #0e0a05;
+  opacity: 0;
+  z-index: 1;
+}
+
+.final__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.final__sub {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 7px;
+  color: rgba(245, 240, 228, 0.3);
+  text-transform: lowercase;
+  margin-bottom: 56px;
+}
+
+.final__date {
+  font-family: var(--font-serif);
+  font-size: clamp(56px, 9vw, 96px);
+  font-weight: 300;
+  color: #f5f0e4;
+  letter-spacing: 6px;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+/* Разделитель перед временем */
+.final__sep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto 28px;
+  max-width: 300px;
+  color: rgba(245, 240, 228, 0.2);
+}
+
+.final__sep::before,
+.final__sep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(245, 240, 228, 0.18);
+}
+
+.final__sep-diamond {
+  width: 6px;
+  height: 6px;
+  background: rgba(245, 240, 228, 0.3);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  display: block;
+}
+
+.final__time {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 6px;
+  color: rgba(245, 240, 228, 0.5);
+  margin-bottom: 72px;
+  text-transform: uppercase;
+}
+
+.final__sign {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: rgba(245, 240, 228, 0.28);
+  line-height: 2.6;
+}
+
+/* ===========================
+   MOBILE — 768px
+   =========================== */
+
+@media (max-width: 560px) {
+  .credits__chapter:not(.credits__chapter--solo) .chapter__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .credits__chapter:not(.credits__chapter--solo) .chapter__cards > .person-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .final__frame {
+    inset: 12px;
+  }
+
+  .final__corner {
+    width: 28px;
+    height: 28px;
+  }
+
+  .final__corner--tl { top: -14px; left: -14px; }
+  .final__corner--tr { top: -14px; right: -14px; }
+  .final__corner--bl { bottom: -14px; left: -14px; }
+  .final__corner--br { bottom: -14px; right: -14px; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero__frame {
+    inset: 12px;
+  }
+
+  .hero__frame::before {
+    inset: 6px;
+  }
+
+  .hero__corner {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero__corner--tl { top: -14px; left: -14px; }
+  .hero__corner--tr { top: -14px; right: -14px; }
+  .hero__corner--bl { bottom: -14px; left: -14px; }
+  .hero__corner--br { bottom: -14px; right: -14px; }
+
+  .hero__sep {
+    margin: 16px 0;
+    gap: 8px;
+  }
+
+  .hero__label {
+    letter-spacing: 5px;
+    margin-bottom: 24px;
+  }
+
+  .hero__date {
+    margin-bottom: 60px;
+  }
+
+  .video-section {
+    padding: 80px 20px;
+  }
+
+  .video-wrapper {
+    outline-offset: 3px;
+  }
+
+  .credits {
+    padding: 80px 20px 100px;
+  }
+
+  .credits__chapter {
+    margin-bottom: 88px;
+  }
+
+  .chapter__divider {
+    margin: 14px 0;
+  }
+
+  .person-card {
+    gap: 18px;
+  }
+
+  .person-card__photo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .person-card__name {
+    font-size: 19px;
+  }
+
+  .person-card__dedication {
+    font-size: 13px;
+  }
+
+  .final__date {
+    letter-spacing: 3px;
+  }
+
+  .audio-btn {
+    top: 16px;
+    right: 16px;
+  }
+}
