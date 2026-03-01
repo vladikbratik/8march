@@ -91,7 +91,7 @@ export const persons = {
   },
   shaligina: {
     name: "Шалыгина Ольга Владимировна",
-    title: "КОРОЛЕВА\nПРОДАЖ",
+    title: "ИСКУССТВО\nПРОДАЖ",
     points: ["ЭКСПЕРТИЗА", "ДОВЕРИЕ", "РЕЗУЛЬТАТ"],
     department: "Продавец-консультант",
     issue: "№12",
@@ -105,6 +105,7 @@ export const persons = {
     department: "Продавец-консультант",
     issue: "№13",
     photo: "sovkova.png",
+    photoPosition: "center 25%",
     palette: { bg: "#080a1f", accent: "#5a7fd4", secondary: "#10163d", text: "#e0e8ff" },
   },
   samolysova: {

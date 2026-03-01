@@ -55,6 +55,7 @@ if (!person) {
   const photoEl = document.getElementById('p-photo');
   photoEl.src = `/assets/photos/${person.photo}`;
   photoEl.alt = person.name;
+  if (person.photoPosition) photoEl.style.objectPosition = person.photoPosition;
 
   // Points
   document.getElementById('p-points').innerHTML = person.points
