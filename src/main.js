@@ -1,8 +1,13 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './style.css';
+import { renderCredits } from './components/renderCredits.js';
+import { launchConfetti } from './components/confetti.js';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Рендерим титры из данных до инициализации анимаций
+renderCredits();
 
 // ===========================
 // SECTION 1: HERO — TIMELINE
@@ -85,6 +90,9 @@ heroTl.to('.hero__scroll', {
   duration: 0.8,
   ease: 'power2.out',
 }, '-=0.3');
+
+// Конфетти — хлопушки после появления заголовка
+heroTl.eventCallback('onComplete', () => launchConfetti());
 
 // Пульсация индикатора скролла — после завершения timeline
 gsap.to('.scroll-indicator', {

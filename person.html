@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ДЕЛО ЖЕНЩИН — 8 марта 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/src/person.css" />
+  </head>
+  <body class="p-page">
+
+    <!-- ================================
+         СЕКЦИЯ 1 — ПОСТЕР
+         ================================ -->
+    <section class="p-section p-section--hero">
+
+      <!-- Декоративная рамка (внутри секции, не fixed) -->
+      <div class="p-frame" aria-hidden="true">
+        <svg class="p-corner p-corner--tl" viewBox="0 0 40 40" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
+          <line x1="20" y1="20" x2="20" y2="40" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
+          <line x1="28" y1="28" x2="40" y2="28" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <line x1="28" y1="28" x2="28" y2="40" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <rect x="10" y="10" width="20" height="20" transform="rotate(45 20 20)" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.38"/>
+          <rect x="13" y="13" width="14" height="14" transform="rotate(45 20 20)" fill="currentColor" opacity="0.48"/>
+          <rect x="17" y="17" width="6"  height="6"  transform="rotate(45 20 20)" fill="currentColor" opacity="0.78"/>
+        </svg>
+        <svg class="p-corner p-corner--tr" viewBox="0 0 40 40" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
+          <line x1="20" y1="20" x2="20" y2="40" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
+          <line x1="28" y1="28" x2="40" y2="28" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <line x1="28" y1="28" x2="28" y2="40" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <rect x="10" y="10" width="20" height="20" transform="rotate(45 20 20)" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.38"/>
+          <rect x="13" y="13" width="14" height="14" transform="rotate(45 20 20)" fill="currentColor" opacity="0.48"/>
+          <rect x="17" y="17" width="6"  height="6"  transform="rotate(45 20 20)" fill="currentColor" opacity="0.78"/>
+        </svg>
+        <svg class="p-corner p-corner--bl" viewBox="0 0 40 40" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
+          <line x1="20" y1="20" x2="20" y2="40" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
+          <line x1="28" y1="28" x2="40" y2="28" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <line x1="28" y1="28" x2="28" y2="40" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <rect x="10" y="10" width="20" height="20" transform="rotate(45 20 20)" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.38"/>
+          <rect x="13" y="13" width="14" height="14" transform="rotate(45 20 20)" fill="currentColor" opacity="0.48"/>
+          <rect x="17" y="17" width="6"  height="6"  transform="rotate(45 20 20)" fill="currentColor" opacity="0.78"/>
+        </svg>
+        <svg class="p-corner p-corner--br" viewBox="0 0 40 40" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
+          <line x1="20" y1="20" x2="20" y2="40" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
+          <line x1="28" y1="28" x2="40" y2="28" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <line x1="28" y1="28" x2="28" y2="40" stroke="currentColor" stroke-width="0.7" opacity="0.25"/>
+          <rect x="10" y="10" width="20" height="20" transform="rotate(45 20 20)" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.38"/>
+          <rect x="13" y="13" width="14" height="14" transform="rotate(45 20 20)" fill="currentColor" opacity="0.48"/>
+          <rect x="17" y="17" width="6"  height="6"  transform="rotate(45 20 20)" fill="currentColor" opacity="0.78"/>
+        </svg>
+      </div>
+
+      <header class="p-header">
+        <span class="p-brand">РУСИЧИ</span>
+      </header>
+
+      <div class="p-hero">
+        <div class="p-photo-wrap">
+          <img class="p-photo" id="p-photo" alt="" />
+        </div>
+
+        <h1 class="p-title" id="p-title"></h1>
+
+        <div class="p-points" id="p-points"></div>
+
+        <div class="p-sep" aria-hidden="true">
+          <span class="p-sep__diamond"></span>
+        </div>
+
+        <div class="p-identity">
+          <p class="p-name" id="p-name"></p>
+          <p class="p-dept" id="p-dept"></p>
+        </div>
+
+        <div class="p-scroll-hint" aria-hidden="true">↓</div>
+      </div>
+
+    </section>
+
+    <!-- ================================
+         СЕКЦИЯ 2 — ПРИГЛАШЕНИЕ
+         ================================ -->
+    <section class="p-section p-section--invite">
+      <div class="p-invite">
+
+        <!-- Декоративная внутренняя рамка -->
+        <div class="p-invite__frame" aria-hidden="true"></div>
+
+        <p class="p-invite__dear" id="p-invite-dear"></p>
+
+        <div class="p-invite__rule" aria-hidden="true">
+          <span class="p-invite__diamond"></span>
+        </div>
+
+        <p class="p-invite__words">
+          Ты делаешь этот офис лучше —<br>
+          каждый день, каждый час.<br>
+          Спасибо, что ты есть.
+        </p>
+
+        <div class="p-invite__rule" aria-hidden="true">
+          <span class="p-invite__diamond"></span>
+        </div>
+
+        <!-- Карточка-приглашение -->
+        <div class="p-invite__card">
+          <p class="p-invite__card-label">ПРИХОДИ ОТМЕТИТЬ ВМЕСТЕ</p>
+          <p class="p-invite__card-date" id="p-invite-date"></p>
+          <p class="p-invite__card-time" id="p-invite-time"></p>
+        </div>
+
+        <p class="p-invite__sign">— с любовью, коллектив&nbsp;РУСИЧИ</p>
+
+      </div>
+    </section>
+
+    <!-- ================================
+         СЕКЦИЯ 3 — ВИДЕО КОМАНДЫ
+         ================================ -->
+    <section class="p-section p-section--video">
+      <p class="p-video__label">реж. коллектив</p>
+      <div class="p-video__wrap">
+        <video
+          src="/assets/video/main.mp4"
+          autoplay
+          muted
+          playsinline
+          loop
+          class="p-video"
+        ></video>
+      </div>
+      <p class="p-video__year">2026</p>
+    </section>
+
+    <script type="module" src="/src/person.js"></script>
+  </body>
+</html>

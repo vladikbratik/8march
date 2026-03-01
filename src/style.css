@@ -502,6 +502,37 @@ body::before {
   line-height: 1.65;
 }
 
+/* Карточка со ссылкой на персональный лендинг */
+.person-card--linked {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+.person-card--linked:hover {
+  transform: translateY(-4px);
+}
+.person-card--linked:hover .person-card__photo {
+  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.25);
+}
+
+.person-card__link-hint {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.person-card--linked:hover .person-card__link-hint {
+  opacity: 1;
+}
+
 /* ===========================
    ПЕРЕХОД ТИТРЫ → ФИНАЛ
    =========================== */
