@@ -17,11 +17,11 @@
   <body class="p-page">
 
     <!-- ================================
-         СЕКЦИЯ 1 — ПОСТЕР
+         СЕКЦИЯ 1 — ПРИГЛАШЕНИЕ
          ================================ -->
     <section class="p-section p-section--hero">
 
-      <!-- Декоративная рамка (внутри секции, не fixed) -->
+      <!-- Декоративная рамка -->
       <div class="p-frame" aria-hidden="true">
         <svg class="p-corner p-corner--tl" viewBox="0 0 40 40" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
           <line x1="20" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="1"   opacity="0.55"/>
@@ -66,67 +66,50 @@
       </header>
 
       <div class="p-hero">
+
+        <!-- Фото -->
         <div class="p-photo-wrap">
           <img class="p-photo" id="p-photo" alt="" />
         </div>
 
-        <h1 class="p-title" id="p-title"></h1>
-
-        <div class="p-points" id="p-points"></div>
-
-        <div class="p-sep" aria-hidden="true">
-          <span class="p-sep__diamond"></span>
+        <!-- Разделитель -->
+        <div class="p-divider" aria-hidden="true">
+          <span class="p-divider__diamond"></span>
         </div>
 
-        <div class="p-identity">
-          <p class="p-name" id="p-name"></p>
-          <p class="p-dept" id="p-dept"></p>
-        </div>
+        <!-- Обращение -->
+        <p class="p-dear" id="p-dear"></p>
 
-        <div class="p-scroll-hint" aria-hidden="true">↓</div>
-      </div>
-
-    </section>
-
-    <!-- ================================
-         СЕКЦИЯ 2 — ПРИГЛАШЕНИЕ
-         ================================ -->
-    <section class="p-section p-section--invite">
-      <div class="p-invite">
-
-        <!-- Декоративная внутренняя рамка -->
-        <div class="p-invite__frame" aria-hidden="true"></div>
-
-        <p class="p-invite__dear" id="p-invite-dear"></p>
-
-        <div class="p-invite__rule" aria-hidden="true">
-          <span class="p-invite__diamond"></span>
-        </div>
-
-        <p class="p-invite__words">
+        <!-- Тёплые слова -->
+        <p class="p-words">
           Ты делаешь этот офис лучше —<br>
           каждый день, каждый час.<br>
           Спасибо, что ты есть.
         </p>
 
-        <div class="p-invite__rule" aria-hidden="true">
-          <span class="p-invite__diamond"></span>
+        <!-- Разделитель -->
+        <div class="p-divider" aria-hidden="true">
+          <span class="p-divider__diamond"></span>
         </div>
 
         <!-- Карточка-приглашение -->
-        <div class="p-invite__card">
-          <p class="p-invite__card-label">ПРИХОДИ ОТМЕТИТЬ ВМЕСТЕ</p>
-          <p class="p-invite__card-date" id="p-invite-date"></p>
-          <p class="p-invite__card-time" id="p-invite-time"></p>
+        <div class="p-card">
+          <p class="p-card__label">ПРИХОДИ ОТМЕТИТЬ ВМЕСТЕ</p>
+          <p class="p-card__date" id="p-card-date"></p>
+          <p class="p-card__time" id="p-card-time"></p>
         </div>
 
-        <p class="p-invite__sign">— с любовью, коллектив&nbsp;РУСИЧИ</p>
+        <!-- Подпись -->
+        <p class="p-sign">— с любовью, коллектив&nbsp;РУСИЧИ</p>
+
+        <div class="p-scroll-hint" aria-hidden="true">↓</div>
 
       </div>
+
     </section>
 
     <!-- ================================
-         СЕКЦИЯ 3 — ВИДЕО КОМАНДЫ
+         СЕКЦИЯ 2 — ВИДЕО КОМАНДЫ
          ================================ -->
     <section class="p-section p-section--video">
       <p class="p-video__label">реж. коллектив</p>
