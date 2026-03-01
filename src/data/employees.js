@@ -29,6 +29,7 @@ export const chapters = [
       { slug: 'chernigina', name: 'Чернигина Татьяна',             photo: 'chernigina.png', dedication: 'Склад держится не на стеллажах.' },
       { slug: 'zateeva',    name: 'Затеева Марина Викторовна',     photo: 'zateeva.png',    dedication: 'Если снабжение работает — её не видно. Это и есть высший пилотаж.' },
       { slug: 'klyukina',   name: 'Клюкина Екатерина',             photo: 'klyukina.png',   dedication: 'Всё идёт по плану. Потому что она так решила.' },
+      { slug: 'noname',     name: '???',                           photo: 'noname.jpg',      dedication: 'Имя пока неизвестно. Но козырь всегда при ней.' },
     ],
   },
   {

@@ -22,6 +22,7 @@ function applyPalette(palette) {
 
 // Извлекаем имя (формат: Фамилия Имя [Отчество])
 function firstName(fullName) {
+  if (!fullName) return 'коллега';
   return fullName.split(' ')[1] ?? fullName;
 }
 
@@ -49,7 +50,7 @@ if (!person) {
   document.title = `${person.name} — 8 марта 2026`;
 
   document.getElementById('p-title').textContent = person.title;
-  document.getElementById('p-name').textContent  = person.name;
+  document.getElementById('p-name').textContent  = person.name || '???';
   document.getElementById('p-dept').textContent  = person.department;
 
   const photoEl = document.getElementById('p-photo');
