@@ -338,11 +338,12 @@
 }
 .p-not-found p {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(18px, 3vw, 24px);
+  font-size: clamp(32px, 7vw, 64px);
   font-weight: 300;
   font-style: italic;
-  color: rgba(42, 31, 14, 0.55);
+  color: #2a1f0e;
   letter-spacing: 0.03em;
+  line-height: 1.2;
 }
 
 /* ===========================
