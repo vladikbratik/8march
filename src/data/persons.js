@@ -162,4 +162,16 @@ export const persons = {
     photo: "eremina-svetlana.png",
     palette: { bg: "#1a0a05", accent: "#c07040", secondary: "#3d1808", text: "#ffeedd" },
   },
+  maleeva: {
+    name: "Малеева Мария Владимировна",
+    department: "—",
+    photo: "maleeva.jpg",
+    palette: { bg: "#1a0514", accent: "#d4609a", secondary: "#3d1030", text: "#ffe8f5" },
+  },
+  natalia: {
+    name: "Наталья",
+    department: "—",
+    photo: "natalia.jpg",
+    palette: { bg: "#051a0f", accent: "#60c490", secondary: "#0f3d20", text: "#e0fff0" },
+  },
 };

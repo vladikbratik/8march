@@ -90,4 +90,20 @@ export const chapters = [
       { slug: 'eremina', name: 'Ерёмина Светлана', photo: 'eremina-svetlana.png', dedication: 'Клиент приходит с проблемой. Уходит с решением и хорошим настроением.' },
     ],
   },
+  {
+    numeral: 'XI',
+    title: '—',
+    solo: true,
+    people: [
+      { slug: 'maleeva', name: 'Малеева Мария Владимировна', photo: 'maleeva.jpg', dedication: '—' },
+    ],
+  },
+  {
+    numeral: 'XII',
+    title: '—',
+    solo: true,
+    people: [
+      { slug: 'natalia', name: 'Наталья', photo: 'natalia.jpg', dedication: '—' },
+    ],
+  },
 ];
