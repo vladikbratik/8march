@@ -1,10 +1,7 @@
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { persons }       from './data/persons.js';
-import { event }         from './data/event.js';
+import { persons }        from './data/persons.js';
+import { event }          from './data/event.js';
 import { launchConfetti } from './components/confetti.js';
-
-gsap.registerPlugin(ScrollTrigger);
 
 // Читаем slug из URL (?slug=tarasova)
 const params = new URLSearchParams(window.location.search);
@@ -33,7 +30,6 @@ if (!person) {
   applyPalette({ bg: '#f5f0e4', accent: '#8b4513', secondary: '#e8e0d0', text: '#2a1f0e' });
   document.querySelector('.p-hero').innerHTML = `
     <div class="p-not-found">
-      <h1>СТРАНИЦА<br>НЕ НАЙДЕНА</h1>
       <p>И что ты хотел тут увидеть?</p>
     </div>
   `;
@@ -101,21 +97,4 @@ if (!person) {
 
   tl.eventCallback('onComplete', () => launchConfetti());
 
-  // ===========================
-  // СЕКЦИЯ 2 — Видео
-  // ===========================
-  gsap.set(['.p-video__label', '.p-video__wrap', '.p-video__year'], { opacity: 0, y: 24 });
-
-  ScrollTrigger.create({
-    trigger: '.p-section--video',
-    start: 'top 78%',
-    once: true,
-    onEnter: () => {
-      gsap.to(['.p-video__label', '.p-video__wrap', '.p-video__year'], {
-        opacity: 1, y: 0,
-        duration: 0.9, stagger: 0.2,
-        ease: 'power2.out',
-      });
-    },
-  });
 }
