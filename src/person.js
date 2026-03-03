@@ -30,11 +30,11 @@ function firstName(fullName) {
 // 404 — персона не найдена
 // ===========================
 if (!person) {
-  applyPalette({ bg: '#0a0a0a', accent: '#c9a84c', secondary: '#1a1a1a', text: '#f5f0e4' });
+  applyPalette({ bg: '#f5f0e4', accent: '#8b4513', secondary: '#e8e0d0', text: '#2a1f0e' });
   document.querySelector('.p-hero').innerHTML = `
     <div class="p-not-found">
       <h1>СТРАНИЦА<br>НЕ НАЙДЕНА</h1>
-      <p>Вернитесь на <a href="/" style="color:var(--p-accent)">главную</a></p>
+      <p>И что ты хотел тут увидеть?</p>
     </div>
   `;
   gsap.to('.p-not-found', { opacity: 1, duration: 0.8, delay: 0.3 });

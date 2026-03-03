@@ -334,14 +334,15 @@
   font-size: clamp(32px, 8vw, 64px);
   font-weight: 300;
   letter-spacing: 0.1em;
-  color: var(--p-text, #f5f0e4);
+  color: #2a1f0e;
 }
 .p-not-found p {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  opacity: 0.5;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(42, 31, 14, 0.55);
+  letter-spacing: 0.03em;
 }
 
 /* ===========================
