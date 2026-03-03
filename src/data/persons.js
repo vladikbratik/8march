@@ -89,6 +89,12 @@ export const persons = {
     photo: "chernigina.png",
     palette: { bg: "#1a0f05", accent: "#d4882a", secondary: "#3d2010", text: "#fef0e0" },
   },
+  shustova: {
+    name: "Шустова Алена Руслановна",
+    department: "Продажи",
+    photo: "shustova.png",
+    palette: { bg: "#0f0a1a", accent: "#9a6ad4", secondary: "#1e1040", text: "#ede0ff" },
+  },
   shaligina: {
     name: "Шалыгина Ольга Владимировна",
     title: "ИСКУССТВО\nПРОДАЖ",
