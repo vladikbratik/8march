@@ -62,15 +62,6 @@ export const persons = {
     photo: "rozanova.png",
     palette: { bg: "#1a1a1a", accent: "#c8b89a", secondary: "#2e2e2e", text: "#f5f0e8" },
   },
-  noname: {
-    name: "",
-    title: "ВСЕГДА С\nКОЗЫРЕМ\nВ РУКАВЕ",
-    points: ["ЧУТЬЁ", "СМЕЛОСТЬ", "МАСТЕРСТВО"],
-    department: "Отдел снабжения",
-    issue: "№9",
-    photo: "noname.jpg",
-    palette: { bg: "#0d0a1f", accent: "#8a5fd4", secondary: "#1e1040", text: "#e8e0ff" },
-  },
   klyukina: {
     name: "Клюкина Екатерина",
     title: "ВСЁ ИДЁТ\nПО ПЛАНУ",
